@@ -64,7 +64,7 @@ public class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     public void OnEndDrag(PointerEventData eventData)
     {
         if (value <= 0) return;
-        if(transform.localPosition.magnitude < range/4) transform.localPosition = Vector3.zero;
+        if(transform.localPosition.magnitude < range/8) transform.localPosition = Vector3.zero;
         else
         {
             if(transform.localPosition.x > 0) updateCell(X+1,Y);
