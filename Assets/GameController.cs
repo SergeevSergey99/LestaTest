@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
 
     public bool isCellAvailable(int x, int y)
     {
+        if (x is < 0 or > 4 || y is < 0 or > 4) return false;
         return field[x, y].transform.childCount == 0;
     }
 
@@ -109,16 +110,5 @@ public class GameController : MonoBehaviour
             }
         }
         if(isFieldWin()) ReGenerateField();
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
